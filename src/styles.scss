@@ -1,0 +1,36 @@
+// @import "~@ng-select/ng-select/themes/default.theme.css";
+
+@import "./assets/styles/variables";
+
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    scroll-behavior: smooth; 
+}
+
+.spacing{ 
+    width: 1277px; 
+    margin: 0 auto; 
+} 
+
+.flex{ 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+} 
+
+a{
+    text-decoration: none;
+    color: $text-color;
+
+    &:active{
+        outline: none;
+        border: none;
+    }
+}
+
+.skeleton{
+    border-radius: 6px;
+}

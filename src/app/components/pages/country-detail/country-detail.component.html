@@ -1,0 +1,76 @@
+<div class="country-detail spacing">
+    <a routerLink="/" class="back-button">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back
+    </a>
+
+    <div class="country-detail-body flex skeletons" *ngIf="isLoading">
+        <app-skeleton classname="country-detail-skeleton flex">
+            <div class="skeleton-image"></div>
+            <div class="skeleton-content flex">
+                <div class="skeleton-small-text"></div>
+                <div class="skeleton-text"></div>
+                <div class="skeleton-small-text"></div>
+            </div>
+        </app-skeleton>    
+    </div>
+
+    <div class="country-detail-body flex" *ngIf="!isLoading && country">
+        <div class="country-detail-image">
+            <img [src]="country.flags.svg" [alt]="country.name.common"/>
+        </div>
+
+        <div class="country-detail-content">
+            <h2 class="country-detail-name">{{country.name.common}}</h2>
+            <div class="flex">
+                <div class="left">
+                    <div class="flex p-div">
+                        Native Name: 
+                        <p *ngIf="nativeName">{{nativeName}}</p>
+                        <p *ngIf="!nativeName">not found</p>
+                    </div>
+                    <p><span>Population: </span>{{country.population | number: '1.0-0'}}</p>
+                    <p><span>Region: </span>{{country.region}}</p>
+                    <div class="flex p-div">
+                        Sub Region: 
+                        <p *ngIf="country.subregion">{{country.subregion}}</p>
+                        <p *ngIf="!country.subregion">none</p>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <p><span>Top Level Domain: </span>{{country.tld}}</p>
+                    <div class="flex p-div">
+                        Currencies: 
+                        <div *ngIf="currencies">
+                            <p *ngFor="let currency of currencies">{{currency.name}}</p>
+                            <p *ngIf="currencies.length === 0">not found</p>
+                        </div>
+                    </div>
+
+                    <div class="flex p-div">
+                        Languages: 
+                        <div *ngIf="languages">
+                            <p *ngFor="let language of languages">{{language}},</p>
+                            <p *ngIf="languages.length === 0">not found</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom flex">
+                <p>Border Countries:</p>
+                <div class="border-countries flex" *ngIf="borderCountries">
+                    <div class="border-country" *ngFor="let border of borderCountries">
+                        <a [routerLink]="['/country', border.name.common]">
+                            {{border.name.common}}
+                        </a>
+                    </div>
+                </div>
+                <div class="" *ngIf="!country.borders">
+                    none
+                </div>    
+            </div>
+        </div>
+    </div>
+
+</div>

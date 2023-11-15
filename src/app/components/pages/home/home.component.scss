@@ -1,0 +1,93 @@
+.home{
+    margin-bottom: 42px;
+    .search-filter-container{
+        margin:45px 0 48px 0;
+
+        .search{
+            position: relative;
+            i{
+                position: absolute;
+                left: 35px;
+                top:22px
+            }
+
+            &-input{
+                padding-left: 80px;
+                height: 56px;
+                width: 482px;
+                border: none;
+                border-radius: 6px;
+
+                &::placeholder{
+                   font-size: 14.5px;
+                }
+
+                &:focus{
+                    outline: 0;
+                    border: transparent;
+                }
+            }
+        }
+
+        .filter{
+
+            i{
+                position: relative;
+                right: 30px;
+                font-size: 10px;
+            }
+
+            .filter-select{
+                width: 200px;
+                cursor: pointer;
+                height: 56px;
+                font-size: 14.5px;
+                border-radius: 6px;
+                border: none;
+                appearance: none;
+                padding: 0 19px 0 25px;
+                font-weight: 600;
+
+                &:focus{
+                    outline: 0;
+                    border: none;
+                }
+            }
+
+        }
+
+    }
+
+
+    .countries-container, .skeletons{
+        display: grid;
+        grid-template-columns: repeat(4, 264px);
+        column-gap: 75px;
+        row-gap: 75px;
+    }
+
+    .skeletons{
+        .skeleton-image{
+            width: 100%;
+            height: 162px;
+            border-radius: 6px 6px 0 0;
+        }
+    
+        .skeleton-text, .skeleton-small-text{
+            margin: 26px 23px;
+            width: 60%;
+            height: 30px;
+            border-radius: 4px;
+        }
+    
+        .skeleton-small-text{
+            width: 80%;
+            height: 20px;
+            margin-top: 0;
+            margin-bottom: 0.6rem;
+        }
+    }
+
+}
+
+  

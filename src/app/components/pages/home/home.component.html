@@ -1,0 +1,46 @@
+<div class="home spacing">
+    <div class="search-filter-container flex">
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" class="search-input" placeholder="Search for a country..." (input)="onSearch($event)"/>
+        </div>
+        <div class="filter">
+            <select class="filter-select" [(ngModel)]="selectedRegion" (ngModelChange)="onRegionSelected()">
+                <option value="default" disabled>Filter by Region</option>
+                <option value="all">All</option>
+                <option value="africa">Africa</option>
+                <option value="america">America</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="oceania">Oceania</option>
+            </select>   
+
+           <i class="fa-solid fa-chevron-down"></i> 
+
+        </div>
+    </div>
+
+    <div class="skeletons" *ngIf="isLoading">
+        <div *ngFor="let item of [1,2,3,4]">
+            <app-skeleton classname="country-card-skeleton">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-text"></div>
+                <div class="skeleton-small-text"></div>
+                <div class="skeleton-small-text"></div>
+            </app-skeleton>
+        </div>
+    </div>
+
+    <div class="countries-container" *ngIf="!isLoading && filteredCountries && filteredCountries.length>0">
+        <div class="countries" *ngFor="let country of filteredCountries"> 
+            <a [routerLink]="['/country', country.name.common]">
+                <app-country-card [country]="country"></app-country-card>
+            </a>
+        </div>
+    </div>
+
+    <div class="no-result" *ngIf="!isLoading && !searchFound">
+        No search results found for <span>{{searchQuery}}</span>
+    </div>
+
+</div>

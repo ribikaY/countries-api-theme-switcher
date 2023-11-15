@@ -1,0 +1,11 @@
+<div class="country-card">
+    <div class="country-card-image">
+        <img [src]="country.flags.png" [alt]="country.cca2"/>
+    </div>
+    <div class="country-card-content">
+        <h1 class="country-card-content-name">{{country.name.common}}</h1>
+        <p><span>Population: </span>{{ country.population | number: '1.0-0' }}</p>
+        <p><span>Region: </span>{{country.region}}</p>
+        <p><span>Capital: </span>{{country.capital}}</p>
+    </div>
+</div>
