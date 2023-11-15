@@ -34,10 +34,104 @@ a{
 
 .skeleton{
     border-radius: 6px;
+
+    &.country-detail-skeleton{
+        .skeleton-image{  
+            width: 100%;  
+            height: 261px;  
+            border-radius: 3px; 
+        }
+
+        .skeleton-content{    
+            margin-top: 3.5rem;
+            margin-left: 0;   
+            width: 330px; 
+            flex-direction: column;  
+            align-items: flex-start;  
+
+            .skeleton-text{  
+                height: 100px;  
+                margin-bottom: 20px;  
+            }
+
+            .skeleton-small-text{ 
+                height: 20px;  
+
+                &:first-of-type{  
+                    height:30px; 
+                    width: 55%; 
+                    margin-bottom: 24px; 
+                }
+            }
+        }
+
+
+        .skeleton-small-text, .skeleton-text{ 
+            border-radius: 6px; 
+            width: 100%; 
+        }
+    }
+}
+
+@include respond(tab-port){
+    .skeleton{
+        &.country-detail-skeleton{
+            .skeleton-content{    
+                width: 550px; 
+            }   
+        }
+    }
+}
+
+@include respond(tab-land){
+    .skeleton{
+        &.country-detail-skeleton{
+            .skeleton-image{  
+                width: 450px;  
+                height: 401px;  
+            }
+
+            .skeleton-content{   
+                margin-top: 0;
+                margin-left: 92px;  
+                width: 301px;  
+
+                .skeleton-text{  
+                    height: 140px;  
+                    margin-bottom: 70px;  
+                }
+    
+                .skeleton-small-text{ 
+                    height: 30px;  
+
+                    &:first-of-type{  
+                        height: 40px; 
+                        margin-bottom: 34px; 
+                    }
+                }
+            }
+        }
+    }
 }
 
 @include respond(desktop){
     .spacing{
         width: 1277px; 
+    }
+
+
+    .skeleton{
+        &.country-detail-skeleton{
+             .skeleton-image{  
+                 width: 560px;  
+                 height: 401px;  
+             }
+    
+              .skeleton-content{   
+                  margin-left: 112px;  
+                  width: 501px;  
+              }
+            
+        }
     }
 }

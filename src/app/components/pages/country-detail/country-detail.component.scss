@@ -4,10 +4,6 @@
     padding-top: 42px;
     padding-bottom: 40px;
 
-    &.spacing{
-        width: 85%;
-    }
-
     .back-button{
         display: flex;
         justify-content: center;
@@ -27,40 +23,6 @@
 
         &.skeletons{  
             justify-content: space-between;  
-            .skeleton-image{  
-                width: 100%;  
-                height: 261px;  
-                border-radius: 3px; 
-            }
-
-            .skeleton-content{    
-                margin-top: 3.5rem;
-                margin-left: 0;   
-                width: 330px; 
-                flex-direction: column;  
-                align-items: flex-start;  
-
-                .skeleton-text{  
-                    height: 100px;  
-                    margin-bottom: 20px;  
-                }
-    
-                .skeleton-small-text{ 
-                    height: 20px;  
-
-                    &:first-of-type{  
-                        height:30px; 
-                        width: 55%; 
-                        margin-bottom: 24px; 
-                    }
-                }
-            }
-
-
-            .skeleton-small-text, .skeleton-text{ 
-                border-radius: 6px; 
-                width: 100%; 
-            }
         }
 
     }
@@ -166,16 +128,12 @@
         } 
     } 
 
+  
     @include respond(tab-port){
         padding-top: 76px; 
 
         &-body{
             margin-top: 78px;
-            &.skeletons{
-                .skeleton-content{    
-                    width: 550px; 
-                }    
-            }
         }    
 
         &-image{ 
@@ -213,7 +171,6 @@
                     margin-left: 1rem;
                     margin-top: 0;
                     grid-template-columns: repeat(3, 33%);
-                    column-gap: 25px;
                 }    
             }    
         }    
@@ -221,47 +178,11 @@
 
     @include respond(tab-land){
         padding-bottom: 0;
-        
-        &.spacing{
-            width: 90%; 
-        }
 
         &-body{
             flex-direction: row;
             align-items: flex-start;
             margin-top: 58px;
-
-            &.skeletons{  
-                justify-content: space-between;  
-                .skeleton-image{  
-                    width: 450px;  
-                    height: 401px;  
-                    border-radius: 3px; 
-                }
-    
-                .skeleton-content{   
-                    margin-top: 0;
-                    margin-left: 92px;  
-                    width: 301px;  
-                    flex-direction: column;  
-                    align-items: flex-start;  
-    
-                    .skeleton-text{  
-                        height: 140px;  
-                        margin-bottom: 70px;  
-                    }
-        
-                    .skeleton-small-text{ 
-                        height: 30px;  
-    
-                        &:first-of-type{  
-                            height: 40px; 
-                            width: 55%; 
-                            margin-bottom: 34px; 
-                        }
-                    }
-                }
-            }
         }
 
         &-image{ 
@@ -285,42 +206,16 @@
                     margin-left: 0;
                     margin-top: 1rem;
                     grid-template-columns: repeat(2, 50%);
-                    column-gap: 25px;
                 }    
             }    
         }
     }
 
-
     @include respond(desktop){
-        &.spacing{
-            width: 1277px; 
-        }
 
         &-body{
-            flex-direction: row;
             align-items: center;
             margin-top: 78px;
-
-            &.skeletons{  
-                justify-content: space-between;  
-                .skeleton-image{  
-                    width: 560px;  
-                    height: 401px;  
-                    border-radius: 3px; 
-                }
-    
-                .skeleton-content{   
-                    margin-left: 112px;  
-                    width: 501px;  
-                }
-    
-    
-                .skeleton-small-text, .skeleton-text{ 
-                    border-radius: 6px; 
-                    width: 100%; 
-                }
-            }
         }
 
         &-image{ 
@@ -330,7 +225,6 @@
 
         &-content{
             width: 596px;  
-            margin-top: 0;
             
             .flex{
                 flex-direction: row;
