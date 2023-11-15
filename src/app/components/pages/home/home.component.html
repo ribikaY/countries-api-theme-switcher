@@ -5,6 +5,7 @@
             <input type="search" class="search-input" placeholder="Search for a country..." (input)="onSearch($event)"/>
         </div>
         <div class="filter">
+            <label for="filter-countries" [ngStyle]="{'display':'none'}">filter</label>
             <select class="filter-select" [(ngModel)]="selectedRegion" (ngModelChange)="onRegionSelected()" id="filter-countries">
                 <option value="default" disabled>Filter by Region</option>
                 <option value="all">All</option>
