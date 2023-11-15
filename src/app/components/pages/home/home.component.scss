@@ -1,10 +1,15 @@
+@import "../../../../assets/styles/breakpoints";
+
 .home{
     margin-bottom: 42px;
     .search-filter-container{
-        margin:45px 0 48px 0;
+        margin:33px 0 45px 0;
+        flex-direction: column;
 
         .search{
+            width: 100%;
             position: relative;
+            margin-bottom: 53px;
             i{
                 position: absolute;
                 left: 35px;
@@ -14,7 +19,7 @@
             &-input{
                 padding-left: 80px;
                 height: 56px;
-                width: 482px;
+                width: 100%;
                 border: none;
                 border-radius: 6px;
 
@@ -30,7 +35,7 @@
         }
 
         .filter{
-
+            align-self: flex-start;
             i{
                 position: relative;
                 right: 30px;
@@ -58,12 +63,9 @@
 
     }
 
-
-    .countries-container, .skeletons{
-        display: grid;
-        grid-template-columns: repeat(4, 264px);
-        column-gap: 75px;
-        row-gap: 75px;
+    .countries-container, .skeletons{ 
+        width: 274px;
+        margin: 0 auto;
     }
 
     .skeletons{
@@ -88,6 +90,61 @@
         }
     }
 
+    @include respond(tab-port){
+        .search-filter-container{
+            width: 560px;
+            margin: auto;
+            margin:33px auto 45px auto;
+        }
+        .countries-container, .skeletons{
+            width: 560px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 264px); 
+            column-gap: 35px;
+            row-gap: 35px;
+        }
+    }
+
+    @include respond(tab-land){
+        .search-filter-container{
+            width: auto;
+            margin:45px 0 48px 0;
+            flex-direction: row;
+
+            .search{
+                width: auto;
+                margin-bottom: 0;
+                &-input{
+                    height: 56px;
+                    width: 482px;
+                }    
+            }
+
+            .filter{
+                align-self: auto;
+            }
+        }
+
+        .countries-container, .skeletons{
+            width: 900px;
+            grid-template-columns: repeat(3, 264px);
+            column-gap: 55px; 
+            row-gap: 55px; 
+        }
+        
+    }
+
+
+    @include respond(desktop){
+        .countries-container, .skeletons{
+            width: auto;
+            grid-template-columns: repeat(4, 264px);
+            column-gap: 75px;
+            row-gap: 75px;
+            margin: 0;
+        }
+    }
 }
 
   

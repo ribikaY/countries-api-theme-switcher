@@ -1,6 +1,7 @@
 // @import "~@ng-select/ng-select/themes/default.theme.css";
 
 @import "./assets/styles/variables";
+@import"./assets/styles/breakpoints";
 
 *{ 
     margin: 0;
@@ -11,7 +12,7 @@
 }
 
 .spacing{ 
-    width: 1277px; 
+    width: 90%;
     margin: 0 auto; 
 } 
 
@@ -33,4 +34,10 @@ a{
 
 .skeleton{
     border-radius: 6px;
+}
+
+@include respond(desktop){
+    .spacing{
+        width: 1277px; 
+    }
 }

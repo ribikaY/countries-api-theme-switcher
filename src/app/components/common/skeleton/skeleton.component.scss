@@ -1,13 +1,28 @@
+@import "../../../../assets/styles/breakpoints";
 .skeleton{
     
     &.country-card-skeleton{
         width: 100%;
         height: 337px;
         border-radius: 6px;
+        margin-bottom: 50px;
     }
 
     &.country-detail-skeleton{
-     
+     flex-direction: column;
+    }
+
+    @include respond(tab-port){
+        &.country-card-skeleton{
+            margin-bottom: 0;
+        }
+    }
+
+    @include respond(tab-land){
+
+        &.country-detail-skeleton{
+            flex-direction: row;
+        }
     }
 
 }

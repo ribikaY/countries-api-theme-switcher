@@ -1,0 +1,30 @@
+// Responsive
+
+@mixin respond($deviceType) {
+    @if $deviceType == phone {
+      @media (max-width:599px) {
+        @content;
+      }
+    }
+    @if $deviceType == tab-port {
+      @media (min-width: 600px) {
+        @content;
+      }
+    }
+    @if $deviceType == tab-land {
+      @media (min-width: 900px) {
+        @content;
+      }
+    }
+    @if $deviceType == desktop {
+      @media (min-width: 1200px) {
+        @content;
+      }
+    }
+    @if $deviceType == bigScreen {
+      @media (min-width: 1800px) {
+        @content;
+      }
+    }
+  }
+  

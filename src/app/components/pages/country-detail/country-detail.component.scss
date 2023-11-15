@@ -1,5 +1,12 @@
+@import "../../../../assets/styles/breakpoints";
+
 .country-detail{
-    padding-top: 76px;
+    padding-top: 42px;
+    padding-bottom: 40px;
+
+    &.spacing{
+        width: 85%;
+    }
 
     .back-button{
         display: flex;
@@ -15,74 +22,81 @@
     }
 
     &-body{
-        margin-top: 78px;
+        margin-top: 38px;
+        flex-direction: column; 
 
-        &.skeletons{
-            justify-content: space-between;
-            .skeleton-image{
-                width: 560px;
-                height: 401px;
-                border-radius: 3px;
+        &.skeletons{  
+            justify-content: space-between;  
+            .skeleton-image{  
+                width: 100%;  
+                height: 261px;  
+                border-radius: 3px; 
             }
 
-            .skeleton-content{
-                margin-left: 112px;
-                width: 501px;
-                flex-direction: column;
-                align-items: flex-start;
+            .skeleton-content{    
+                margin-top: 3.5rem;
+                margin-left: 0;   
+                width: 330px; 
+                flex-direction: column;  
+                align-items: flex-start;  
 
-                .skeleton-text{
-                    height: 140px;
-                    margin-bottom: 70px;
+                .skeleton-text{  
+                    height: 100px;  
+                    margin-bottom: 20px;  
                 }
     
-                .skeleton-small-text{
-                    height: 30px;
+                .skeleton-small-text{ 
+                    height: 20px;  
 
-                    &:first-of-type{
-                        height: 40px;
-                        width: 55%;
-                        margin-bottom: 34px;
+                    &:first-of-type{  
+                        height:30px; 
+                        width: 55%; 
+                        margin-bottom: 24px; 
                     }
                 }
             }
 
 
-            .skeleton-small-text, .skeleton-text{
-                border-radius: 6px;
-                width: 100%;
+            .skeleton-small-text, .skeleton-text{ 
+                border-radius: 6px; 
+                width: 100%; 
             }
         }
 
     }
 
 
-    &-image{
-        width: 560px;
-        height: 401px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    &-image{ 
+        width: 100%; 
+        height: 250px; 
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; 
 
-        img{
-            width: 100%;
-            height: 100%;
-            display: inline-block;
+        img{ 
+            width: 100%;  
+            height: 100%; 
+            display: inline-block; 
         }
     }
 
-    &-content{
-        width: 596px;
+    &-content{ 
+        width: 100%;
+        margin-top: 3rem;  
 
         h2{
-            margin-bottom: 34px;
-            font-size: 35px;
+            margin-bottom: 20px;
+            font-size: 26px;
         }
 
-        .flex{
+        .flex{ 
             align-items: flex-start;
+            flex-direction: column;
         }
 
         .right, .left{
-            width: 249px;
+            width: 100%;
+            .flex{
+                flex-direction: row;
+            }
             p{
                 margin-bottom: 10px;
                 font-weight: 300;
@@ -106,13 +120,15 @@
 
         .right{
             width: 256px;
+            margin-top: 30px;
         }
 
         .bottom{
-            margin-top: 80px;
+            margin-top: 24px;
 
             &.flex{
                 justify-content: flex-start;
+                flex-direction: column;
             }
 
             p{
@@ -120,9 +136,9 @@
             } 
 
             .border-countries{
-                margin-left: 1rem;
+                margin-top: 1rem;
                 display: grid;
-                grid-template-columns: repeat(3, 33%);
+                grid-template-columns: repeat(2, 50%);
                 column-gap: 25px;
                 row-gap: 12px;
                 .border-country{
@@ -149,4 +165,195 @@
 
         } 
     } 
+
+    @include respond(tab-port){
+        padding-top: 76px; 
+
+        &-body{
+            margin-top: 78px;
+            &.skeletons{
+                .skeleton-content{    
+                    width: 550px; 
+                }    
+            }
+        }    
+
+        &-image{ 
+            width: 596px; 
+            height: 321px; 
+        }
+
+        &-content{ 
+            width: 596px;  
+
+            h2{
+                margin-bottom: 34px;
+                font-size: 35px;
+            }
+
+            .flex{
+                flex-direction: row;
+            }
+
+            .right, .left{
+                width: 249px;
+            }    
+
+            .right{
+                margin-top: 0;
+            }
+
+            .bottom{
+                margin-top: 80px;
+                &.flex{
+                    flex-direction: row;
+                }
+
+                .border-countries{
+                    margin-left: 1rem;
+                    margin-top: 0;
+                    grid-template-columns: repeat(3, 33%);
+                    column-gap: 25px;
+                }    
+            }    
+        }    
+    }
+
+    @include respond(tab-land){
+        padding-bottom: 0;
+        
+        &.spacing{
+            width: 90%; 
+        }
+
+        &-body{
+            flex-direction: row;
+            align-items: flex-start;
+            margin-top: 58px;
+
+            &.skeletons{  
+                justify-content: space-between;  
+                .skeleton-image{  
+                    width: 450px;  
+                    height: 401px;  
+                    border-radius: 3px; 
+                }
+    
+                .skeleton-content{   
+                    margin-top: 0;
+                    margin-left: 92px;  
+                    width: 301px;  
+                    flex-direction: column;  
+                    align-items: flex-start;  
+    
+                    .skeleton-text{  
+                        height: 140px;  
+                        margin-bottom: 70px;  
+                    }
+        
+                    .skeleton-small-text{ 
+                        height: 30px;  
+    
+                        &:first-of-type{  
+                            height: 40px; 
+                            width: 55%; 
+                            margin-bottom: 34px; 
+                        }
+                    }
+                }
+            }
+        }
+
+        &-image{ 
+            width: 50%; 
+        }
+
+        &-content{
+            margin-top: 0;
+            width: 40%;
+            .flex{
+                flex-direction: column;
+            }
+
+            .bottom{
+                margin-top: 40px;
+                &.flex{
+                    flex-direction: column;
+                }
+
+                .border-countries{
+                    margin-left: 0;
+                    margin-top: 1rem;
+                    grid-template-columns: repeat(2, 50%);
+                    column-gap: 25px;
+                }    
+            }    
+        }
+    }
+
+
+    @include respond(desktop){
+        &.spacing{
+            width: 1277px; 
+        }
+
+        &-body{
+            flex-direction: row;
+            align-items: center;
+            margin-top: 78px;
+
+            &.skeletons{  
+                justify-content: space-between;  
+                .skeleton-image{  
+                    width: 560px;  
+                    height: 401px;  
+                    border-radius: 3px; 
+                }
+    
+                .skeleton-content{   
+                    margin-left: 112px;  
+                    width: 501px;  
+                }
+    
+    
+                .skeleton-small-text, .skeleton-text{ 
+                    border-radius: 6px; 
+                    width: 100%; 
+                }
+            }
+        }
+
+        &-image{ 
+            width: 560px; 
+            height: 401px; 
+        }
+
+        &-content{
+            width: 596px;  
+            margin-top: 0;
+            
+            .flex{
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .right, .left{
+                width: 249px;
+            }   
+
+
+            .bottom{
+                margin-top: 80px;
+                &.flex{
+                    flex-direction: row;
+                }
+
+                .border-countries{
+                    margin-left: 1rem;
+                    margin-top: 0;
+                    grid-template-columns: repeat(3, 33%);
+                }    
+            } 
+        }
+    }
 } 
